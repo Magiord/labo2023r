@@ -130,8 +130,11 @@ AgregarVariables_IntraMes <- function(dataset) {
 
   # Aqui debe usted agregar sus propias nuevas variables
   
+<<<<<<< HEAD
   # Calcular la relación porcentual
   
+=======
+>>>>>>> 6b3cb3e14441acb135d9caccc3f34308ac79e3f1
   dataset[, mpayroll_st := sum(mpayroll), by = foto_mes]
   dataset[, mpayroll_vert := mpayroll / mpayroll_st * 100]
   
