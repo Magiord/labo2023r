@@ -6,7 +6,7 @@ gc(full = TRUE) # garbage collection
 
 require("data.table")
 require("yaml")
-
+require("ggplot2")
 
 # Parametros del script
 PARAM <- list()
