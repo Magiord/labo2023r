@@ -6,13 +6,16 @@ gc(full = TRUE) # garbage collection
 
 require("data.table")
 require("yaml")
-
+require("ggplot2")
 
 # Parametros del script
 PARAM <- list()
 PARAM$experimento <- "DR6210"
 
 PARAM$exp_input <- "CA6110"
+
+PARAM$home <- "~/buckets/b1/"
+
 
 setwd(PARAM$home)
 
@@ -22,9 +25,9 @@ dataset_input <- paste0("./exp/", PARAM$exp_input, "/dataset.csv.gz")
 dataset <- fread(dataset_input)
 
 # Calcula la densidad de sueldo para cada mes
-density_data <- dataset[, list(Density = density(mpayrool)), by = foto_mes]
+density_data <- dataset[, list(Density = density(mpayroll)), by = foto_mes]
 # Gráfica la densidad de sueldo para cada mes
-ggplot(density_data, aes(x = x, y = y, color = Mes)) +
+ggplot(density_data, aes(x = x, y = y, color = foto_mes)) +
   geom_line() +
   labs(x = "Sueldo", y = "Densidad", title = "Densidad de Sueldo por Mes") +
   theme_minimal()
