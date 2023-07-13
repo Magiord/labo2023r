@@ -14,6 +14,9 @@ PARAM$experimento <- "DR6210"
 
 PARAM$exp_input <- "CA6110"
 
+PARAM$home <- "~/buckets/b1/"
+
+
 setwd(PARAM$home)
 
 # cargo el dataset donde voy a entrenar
@@ -22,7 +25,7 @@ dataset_input <- paste0("./exp/", PARAM$exp_input, "/dataset.csv.gz")
 dataset <- fread(dataset_input)
 
 # Calcula la densidad de sueldo para cada mes
-density_data <- dataset[, list(Density = density(mpayrool)), by = foto_mes]
+density_data <- dataset[, list(Density = density(mpayroll)), by = foto_mes]
 # Gráfica la densidad de sueldo para cada mes
 ggplot(density_data, aes(x = x, y = y, color = Mes)) +
   geom_line() +
