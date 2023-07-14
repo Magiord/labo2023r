@@ -134,11 +134,7 @@ AgregarVariables_IntraMes <- function(dataset) {
   
   #dataset[, mpayroll_st := sum(mpayroll), by = foto_mes]
   #dataset[, mpayroll_vert := mpayroll / mpayroll_st * 100]
-<<<<<<< HEAD
-=======
-  
->>>>>>> 8b2394df5af078e0df85b36810319c153b73c8d2
-  
+
   # valvula de seguridad para evitar valores infinitos
   # paso los infinitos a NULOS
   infinitos <- lapply(
