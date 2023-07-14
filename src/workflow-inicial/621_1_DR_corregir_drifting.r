@@ -1,4 +1,4 @@
-# Experimentos Colaborativos Default
+# Experimentos Colaborativos Exp1
 # Workflow  Data Drifting repair
 
 # limpio la memoria
@@ -11,15 +11,15 @@ require("yaml")
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "DR6210"
+PARAM$experimento <- "DR6210_1"
 
-PARAM$exp_input <- "CA6110"
+PARAM$exp_input <- "CA6110_1"
 
 PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
 # valores posibles
 #  "ninguno", "rank_simple", "rank_cero_fijo", "deflacion"
-PARAM$metodo <- "rank_cero_fijo"
+PARAM$metodo <- "rank_simple"
 
 PARAM$home <- "~/buckets/b1/"
 # FIN Parametros del script
@@ -130,13 +130,10 @@ AgregarVariables_IntraMes <- function(dataset) {
 
   # Aqui debe usted agregar sus propias nuevas variables
   
-<<<<<<< HEAD
   # Calcular la relación porcentual
   
-=======
->>>>>>> 6b3cb3e14441acb135d9caccc3f34308ac79e3f1
-  dataset[, mpayroll_st := sum(mpayroll), by = foto_mes]
-  dataset[, mpayroll_vert := mpayroll / mpayroll_st * 100]
+  #dataset[, mpayroll_st := sum(mpayroll), by = foto_mes]
+  #dataset[, mpayroll_vert := mpayroll / mpayroll_st * 100]
   
 
   # valvula de seguridad para evitar valores infinitos
@@ -245,6 +242,22 @@ drift_rank_cero_fijo <- function(campos_drift) {
   }
 }
 #------------------------------------------------------------------------------
+
+#------------------------------------------------------------------------------
+
+#drift_normaliza <- function(campos_drift) {
+#  for (campo in campos_drift)
+ 
+#  media <- mean(dataset$campo)
+#  desvio <- sd(dataset$campo)
+  
+  # Normalizar la variable utilizando data.table
+  #dataset[, campo_normal := (campo - media) / desvio]
+    
+   
+#------------------------------------------------------------------------------
+#
+
 #------------------------------------------------------------------------------
 # Aqui comienza el programa
 OUTPUT$PARAM <- PARAM
@@ -283,7 +296,8 @@ switch(PARAM$metodo,
   "ninguno"        = cat("No hay correccion del data drifting"),
   "rank_simple"    = drift_rank_simple(campos_monetarios),
   "rank_cero_fijo" = drift_rank_cero_fijo(campos_monetarios),
-  "deflacion"      = drift_deflacion(campos_monetarios)
+  "deflacion"      = drift_deflacion(campos_monetarios),
+  "normaliza"      = drift_normaliza(campos_monetarios)
 )
 
 
