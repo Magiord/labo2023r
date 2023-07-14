@@ -246,8 +246,7 @@ drift_rank_cero_fijo <- function(campos_drift) {
 
 #drift_normaliza <- function(campos_drift) {
 #  for (campo in campos_drift)
-<<<<<<< HEAD
- 
+
 #  media <- mean(dataset$campo)
 #  desvio <- sd(dataset$campo)
   
@@ -255,7 +254,6 @@ drift_rank_cero_fijo <- function(campos_drift) {
   #dataset[, campo_normal := (campo - media) / desvio]
     
    
-=======
 
 #  media <- mean(dataset$campo)
 #  desvio <- sd(dataset$campo)
@@ -264,7 +262,6 @@ drift_rank_cero_fijo <- function(campos_drift) {
 #dataset[, campo_normal := (campo - media) / desvio]
 
 
->>>>>>> 8b2394df5af078e0df85b36810319c153b73c8d2
 #------------------------------------------------------------------------------
 #
 
