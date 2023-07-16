@@ -18,7 +18,7 @@ PARAM$exp_input <- "CA6110"
 PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
 # valores posibles
-#  "ninguno", "rank_simple", "rank_cero_fijo", "deflacion", "normaliza"
+#  "ninguno", "rank_simple", "rank_cero_fijo", "deflacion", "normaliza", "intvert"
 PARAM$metodo <- "normaliza"
 
 PARAM$home <- "~/buckets/b1/"
@@ -224,6 +224,19 @@ drift_normaliza <- function(campos_drift) {
   }
 }
 
+#------------------------------------------------------------------------------
+drift_intvert <- function(campos_drift) {
+  for (campo in campos_drift){
+    cat(campo, " ")
+    
+    total_campo <- sum(dataset$campo, na.rm=TRUE)
+    #desvio <- sd(dataset$campo, na.rm=TRUE)
+    
+    # integración vertical de la variable utilizando data.table
+    dataset[, paste0(campo, "_normal") := get(campo) / desvio * 100]
+  }
+}
+
 
 #------------------------------------------------------------------------------
 drift_rank_simple <- function(campos_drift) {
@@ -318,7 +331,8 @@ switch(PARAM$metodo,
   "rank_simple"    = drift_rank_simple(campos_monetarios),
   "rank_cero_fijo" = drift_rank_cero_fijo(campos_monetarios),
   "deflacion"      = drift_deflacion(campos_monetarios),
-  "normaliza"      = drift_normaliza(campos_monetarios)
+  "normaliza"      = drift_normaliza(campos_monetarios),
+  "intvert"        = drift_intvert(campos_monetarios)
 )
 
 
