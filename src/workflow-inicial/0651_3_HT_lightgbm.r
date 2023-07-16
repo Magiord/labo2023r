@@ -3,7 +3,7 @@
 
 # pensado para datasets con UNDERSAPLING de la clase mayoritaria
 
-# limpio la memoria
+# limpio la memoria                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 rm(list = ls(all.names = TRUE)) # remove all objects
 gc(full = TRUE) # garbage collection
 
