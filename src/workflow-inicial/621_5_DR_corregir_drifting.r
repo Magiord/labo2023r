@@ -221,6 +221,7 @@ drift_normaliza <- function(campos_drift) {
     
     # Normalizar la variable utilizando data.table
     dataset[, paste0(campo, "_normal") := (get(campo) - media) / desvio]
+    dataset[, (campo) := NULL]
   }
 }
 
