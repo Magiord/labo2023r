@@ -234,7 +234,7 @@ drift_intvert <- function(campos_drift) {
     #desvio <- sd(dataset$campo, na.rm=TRUE)
     
     # integración vertical de la variable utilizando data.table
-    dataset[, paste0(campo, "_normal") := get(campo) / desvio * 100]
+    dataset[, paste0(campo, "_intvert") := get(campo) / desvio * 100]
     dataset[, (campo) := NULL]
   }
 }
