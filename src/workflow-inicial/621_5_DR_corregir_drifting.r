@@ -223,7 +223,7 @@ drift_normaliza <- function(campos_drift) {
     #dataset[, paste0(campo, "_normal") := mean(get(campo), by = .(numero_de_cliente, foto_mes)]
     #dataset[, paste0(campo, "_normal") := mean(get(campo)), by = .(numero_de_cliente, foto_mes)]
     
-    dataset[, paste0(campo, "_normal") := (get(campo) - mean(get(campo))) / sd(get(campo)), by = .(numero_de_cliente, foto_mes)]
+    dataset[, paste0(campo, "_normal") := (get(campo) - mean(get(campo), na.rm=TRUE)) / sd(get(campo), na.rm=TRUE), by = .(foto_mes)]
     
     # dataset[, paste0(campo, "_normal") := (get(campo) - media) / desvio]
     
