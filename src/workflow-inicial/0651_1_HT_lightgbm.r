@@ -24,10 +24,10 @@ options(error = function() {
   stop("exiting after script error")
 })
 #------------------------------------------------------------------------------
-
+b
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "HT6510_1"
+PARAM$experimento <- "HT6510_12"
 
 PARAM$exp_input <- "TS6410_1"
 
