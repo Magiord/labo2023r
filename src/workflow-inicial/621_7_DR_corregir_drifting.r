@@ -264,7 +264,6 @@ drift_intvert <- function(campos_drift) {
   }
 }
 
-dataset[, paste0(campo, "_escalo_absoluto") := (get(campo) - min(get(campo), na.rm = TRUE)) / (max(get(campo), na.rm = TRUE) - min(get(campo), na.rm = TRUE)), by = .(foto_mes)]
 
 #------------------------------------------------------------------------------
 drift_rank_simple <- function(campos_drift) {
