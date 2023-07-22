@@ -24,12 +24,12 @@ options(error = function() {
   stop("exiting after script error")
 })
 #------------------------------------------------------------------------------
-
+b
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "HT6510"
+PARAM$experimento <- "HT6510_12"
 
-PARAM$exp_input <- "TS6410"
+PARAM$exp_input <- "TS6410_1"
 
 # En caso que se haga cross validation, se usa esta cantidad de folds
 PARAM$lgb_crossvalidation_folds <- 5

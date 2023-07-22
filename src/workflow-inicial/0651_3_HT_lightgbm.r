@@ -3,7 +3,7 @@
 
 # pensado para datasets con UNDERSAPLING de la clase mayoritaria
 
-# limpio la memoria
+# limpio la memoria                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 rm(list = ls(all.names = TRUE)) # remove all objects
 gc(full = TRUE) # garbage collection
 
@@ -27,9 +27,9 @@ options(error = function() {
 
 # Parametros del script
 PARAM <- list()
-PARAM$experimento <- "HT6510"
+PARAM$experimento <- "HT6510_3"
 
-PARAM$exp_input <- "TS6410"
+PARAM$exp_input <- "TS6410_3"
 
 # En caso que se haga cross validation, se usa esta cantidad de folds
 PARAM$lgb_crossvalidation_folds <- 5
