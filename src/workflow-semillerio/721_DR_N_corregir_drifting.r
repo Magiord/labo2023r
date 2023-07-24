@@ -19,7 +19,7 @@ PARAM$variables_intrames <- TRUE # atencion esto esta en TRUE
 
 # valores posibles
 #  "ninguno", "rank_simple", "rank_cero_fijo", "deflacion", "normaliza", "intvert" , "escala"
-PARAM$metodo <- "escala"
+PARAM$metodo <- "normaliza"
 
 PARAM$home <- "~/buckets/b1/"
 # FIN Parametros del script
