@@ -342,7 +342,7 @@ GVEZ <- 1
 
 CanaritosAsesinos <- function(
     canaritos_ratio = 0.2,
-    canaritos_desvios = 3.0, canaritos_semilla = 999983) {
+    canaritos_desvios = 6.0, canaritos_semilla = 999983) {
   gc()
   dataset[, clase01 := ifelse(clase_ternaria == "CONTINUA", 0, 1)]
 
